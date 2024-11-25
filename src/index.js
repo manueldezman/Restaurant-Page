@@ -1,1 +1,6 @@
-console.log("Dezman Royal");
+import "./styles.css";
+import { PageLoad } from "./homepage";
+
+const contentDiv = document.querySelector(".content");
+
+PageLoad(contentDiv);

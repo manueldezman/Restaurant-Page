@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    width: 100%;
+}
+
+header > nav {
+    margin: auto;
+    max-width: 50rem;
+    display: flex;
+    justify-content: space-between;
+}
+nav > button {
+    font-size: 2rem;
+    border: unset;
+    background-color: transparent;
+    cursor: pointer;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.hero {
+    background-image: url(./images/hero-bg-desktop.jpg);
+    max-width: 140rem;
+    max-height: 70rem;
+    width: 80%;
+    object-fit: contain;
+    background-position: 60% 0%;
+    color: white;
+    padding:  25rem 5rem;
+    margin: auto;
+}
+
+.hero > h1 {
+    font-size: 5rem;
+}
+
+.hero > p {
+    font-size: 1.6rem;
+    width: 65ch;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.container div > p {
+    font-size: 1.6rem;
+    width:50ch;
+}
+.socialEvent, .menu-container {
+    max-width: 90rem;
+    margin: auto;
+}
+.socialEvent > div:first-of-type {
+    width: 45rem;
+    height: 50rem;
+    background-image: url(./images/social-events-desktop.jpg);
+    /* background-position: 20% 0%; */
+}
+
+.menu-container > div:last-of-type {
+    width: 45rem;
+    height: 50rem;
+    border: 1px solid red;
+    background-image: url(./images/menu);
+    background-position: 60% 50%;
+    object-fit: contain;
+}
+
+
+footer {
+    max-width: 140rem;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    font-size: 1.6rem;
+    margin-top: 5rem;
+}
+
+footer > .address, footer > .open-times {
+    text-transform: uppercase;
+}
