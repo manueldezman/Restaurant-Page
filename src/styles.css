@@ -55,12 +55,13 @@ nav > button {
     justify-content: space-between;
 }
 .container div > p {
-    font-size: 1.6rem;
-    width:50ch;
+    font-size: 3rem;
+    width: 28ch;
 }
 .socialEvent, .menu-container {
     max-width: 90rem;
     margin: auto;
+    gap: 3rem;
 }
 .socialEvent > div:first-of-type {
     width: 45rem;
@@ -81,6 +82,7 @@ nav > button {
 
 footer {
     max-width: 140rem;
+    height: 10rem;
     display: flex;
     justify-content: space-around;
     margin: auto;
@@ -90,4 +92,8 @@ footer {
 
 footer > .address, footer > .open-times {
     text-transform: uppercase;
+}
+
+footer > .made-by, footer > .address, footer > .open-times {
+    margin: auto;
 }
