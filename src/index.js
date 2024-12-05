@@ -9,6 +9,6 @@ PageLoad(contentDiv);
 
 function LoadMenu(){
     contentDiv.textContent = "";
-     MenuPage(contentDiv);
+    MenuPage(contentDiv);
     };
 menuBtn.addEventListener("click", LoadMenu);

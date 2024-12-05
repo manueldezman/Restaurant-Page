@@ -11,9 +11,14 @@ import pannaImg from "./images/image-panna-cotta-desktop.jpg";
 
 function MenuPage (div) {
 let menu = [];
+let cartList = [];
 
+const menuPage = document.createElement("div");
+menuPage.classList.add("menupage");
 const menuList = document.createElement("div");
+menuList.classList.add("menuList");
 const cart = document.createElement("div");
+cart.classList.add("cart");
 
 function menuItems (type, name, price, url) {
     return {type, name, price, url}
@@ -42,9 +47,13 @@ function displayMenuItems(menu) {
     
     for (let item of menu) {
         const itemBox = document.createElement("div");
+        itemBox.classList.add("itemBox");
         const image = document.createElement('img');
+        image.classList.add("item-image");
         const addToCart = document.createElement("div");
+        addToCart.classList.add("add-to-cart");
         const type = document.createElement("h3");
+
         const name = document.createElement("h2");
         const price = document.createElement("h2");
 
@@ -62,8 +71,55 @@ function displayMenuItems(menu) {
 
         menuList.appendChild(itemBox);
 
-    }
-    div.appendChild(menuList);
+    };
+
+    menuPage.appendChild(menuList);
+
+    function displayCartItems(cart) {
+        cart.textContent = "";
+
+        const cartHeader = document.createElement("h1");
+        const confirmOrderBtn = document.createElement("button");
+        const orderTotal = document.createElement("div");
+        let totalCost = 0;
+
+
+        for (let item of cartList) {
+            
+            const cartItems = document.createElement("div");
+            const itemDiv = document.createElement("div");
+            const itemCost = item.price * item.count; 
+            itemDiv.innerHTML = `<h3>${item.name}</h3>
+            <div>
+            <div>
+            <p class"item-count">${item.count}</p> <p class="item-price">${item.price}</p> <p class="item-cost">${itemCost}</p>
+            </div>
+            <img src="./images/icon-remove-item.svg" alt="remove item"/>
+            </div>`;
+
+            totalCost = totalCost + itemCost;
+
+            cartItems.appendChild(itemDiv);
+
+        }
+
+        itemDiv.classList.add("cartItem");
+        cartHeader.textContent = "Your Cart";
+        cartHeader.classList.add("cart-header");
+        cart.appendChild(cartHeader);
+        cart.appendChild(cartItems);
+        orderTotal.textContent = `Order Total            ${totalCost}`
+        cart.appendChild(orderTotal);
+        confirmOrderBtn.textContent = "Confirm Order";
+        confirmOrderBtn.classList.add("confirm-order-btn");
+        cart.appendChild(confirmOrderBtn);
+
+    };
+    
+    menuPage.appendChild(cart);
+    div.appendChild(menuPage);
+
+
 }
 displayMenuItems(menu);
 
