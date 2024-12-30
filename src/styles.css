@@ -28,6 +28,7 @@ nav > button {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    margin-top: 2rem;
 }
 .hero {
     background-image: url(./images/hero-bg-desktop.jpg);
@@ -113,6 +114,7 @@ footer > .made-by, footer > .address, footer > .open-times {
     max-width: 80rem;
     gap: 2rem;
     flex-wrap: wrap;
+    grid-column: 1 / 2;
 }
 
 .itemBox > h3 {
@@ -130,6 +132,9 @@ footer > .made-by, footer > .address, footer > .open-times {
     position: absolute;
     top: 23rem;
     left: 5rem;
+}
+
+.add-to-cart > p, img, button {
     cursor: pointer;
 }
 
@@ -146,9 +151,35 @@ footer > .made-by, footer > .address, footer > .open-times {
     border-radius: 3rem;
     border: .1rem solid grey;
 }
-.menuPage {
+.menupage {
+    max-width: 100rem;
     width: 100%;
+    min-height: 100rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 0;
+}
+
+.cart {
+    grid-column: 2 / 3;
+}
+.cartItem {
     display: flex;
-    justify-content: center;
-    max-width: 110rem;
+    flex-direction: column;
+    border-bottom: .1rem solid red;
+}
+.item-details {
+    display: flex;
+    gap: 1rem;
+    margin-top: .4rem;
+}
+
+.price-details {
+    display: flex;
+    justify-content: space-between;
+}
+.price-details > img {
+    height: 1.5rem;
+    width: 1.5rem;
 }
