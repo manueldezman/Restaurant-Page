@@ -101,20 +101,13 @@ function displayCartItems() {
     const cartHeader = document.createElement("h1");
     const confirmOrderBtn = document.createElement("button");
     const orderTotal = document.createElement("div");
-    let totalCost = 0;
+    let totalCost = 0.00;
 
     const cartItems = document.createElement("div");
     
 
     for (let item of cartList) {
-        
-        console.log(item.count);
-
-
         const itemCost = item.price * item.count;
-        console.log(item.price);
-        console.log(itemCost);
-
     
         const itemDiv = document.createElement("div");
         itemDiv.classList.add("cartItem");
