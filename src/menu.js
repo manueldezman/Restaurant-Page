@@ -115,7 +115,7 @@ function displayCartItems() {
         itemDiv.innerHTML = `<h3>${item.name}</h3>
         <div class="price-details">
         <div class="item-details">
-        <p class"item-count">${item.count}x</p> <p class="item-price">$${item.price}</p> <p class="item-cost">$${itemCost}</p>
+        <p class="item-count">${item.count}x</p> <p class="item-price">$${item.price}</p> <p class="item-cost">$${itemCost}</p>
         </div>
         <img src="${removeItem}" alt="remove item"/>
         </div>`;
@@ -129,8 +129,10 @@ function displayCartItems() {
     cartHeader.textContent = "Your Cart";
     cartHeader.classList.add("cart-header");
     cart.appendChild(cartHeader);
+    cartItems.classList.add("cart-item-container");
     cart.appendChild(cartItems);
-    orderTotal.textContent = `Order Total            $${totalCost}`
+    orderTotal.innerHTML = `Order Total            <span id="total">$${totalCost}</span>`;
+    orderTotal.classList.add("order-total");
     cart.appendChild(orderTotal);
     confirmOrderBtn.textContent = "Confirm Order";
     confirmOrderBtn.classList.add("confirm-order-btn");
