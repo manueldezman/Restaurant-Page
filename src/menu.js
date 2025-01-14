@@ -9,6 +9,7 @@ import cakeImg from "./images/image-cake-desktop.jpg";
 import brownieImg from "./images/image-brownie-desktop.jpg";
 import pannaImg from "./images/image-panna-cotta-desktop.jpg";
 import removeItem from "./images/icon-remove-item.svg";
+import orderConfirmed from "./images/icon-order-confirmed.svg";
 
 function MenuPage (div) {
 let menu = [];
@@ -20,7 +21,8 @@ const menuList = document.createElement("div");
 menuList.classList.add("menuList");
 const cart = document.createElement("div");
 cart.classList.add("cart");
-
+const orderConfirmedModal = document.createElement("div");
+orderConfirmedModal.classList.add("order-confirm-modal");
 
 function menuItems (type, name, price, url, count) {
     return {type, name, price, url, count}
@@ -91,9 +93,6 @@ function displayMenuItems(menu) {
 
 displayMenuItems(menu);
 
-// const hello = () => {console.log("hello, world")};
-
-
 
 function displayCartItems() {
     cart.textContent = "";
@@ -117,7 +116,7 @@ function displayCartItems() {
         <div class="item-details">
         <p class="item-count">${item.count}x</p> <p class="item-price">$${item.price}</p> <p class="item-cost">$${itemCost}</p>
         </div>
-        <img src="${removeItem}" alt="remove item"/>
+        <img id="${item.name}" src="${removeItem}" alt="remove item"/>
         </div>`;
 
         totalCost = totalCost + itemCost;
@@ -142,10 +141,7 @@ function displayCartItems() {
 
 
 function addItemToCart(e) {
-    console.log(e.target);
-
     for (let item of menu) {
-        // console.log(item.name);
 
         if (e.target.id == item.name) {
             
@@ -164,12 +160,26 @@ function addItemToCart(e) {
     displayCartItems();
 }
 
+function removeFromCart(e) {
+
+    for (let item of cartList) {
+        
+        if (e.target.id == item.name) {
+            item.count = 0;
+            let index = cartList.indexOf(item);
+
+            cartList.splice(index, 1);
+        }
+        }
+        displayCartItems();
+
+}
 
 
+displayCartItems();
 
 menuList.addEventListener("click", addItemToCart);
-
-
+cart.addEventListener("click", removeFromCart);
 }
 
 export { MenuPage };
