@@ -23,6 +23,10 @@ const cart = document.createElement("div");
 cart.classList.add("cart");
 const orderConfirmedModal = document.createElement("div");
 orderConfirmedModal.classList.add("order-confirm-modal");
+const ModalContainer = document.createElement("div");
+ModalContainer.classList.add("modal-container");
+const confirmOrderBtn = document.createElement("button");
+
 
 function menuItems (type, name, price, url, count) {
     return {type, name, price, url, count}
@@ -98,7 +102,6 @@ function displayCartItems() {
     cart.textContent = "";
 
     const cartHeader = document.createElement("h1");
-    const confirmOrderBtn = document.createElement("button");
     const orderTotal = document.createElement("div");
     let totalCost = 0.00;
 
@@ -174,10 +177,65 @@ function removeFromCart(e) {
         displayCartItems();
 
 }
+function displayOrderConfirmedModal() {
+    orderConfirmedModal.textContent = "";
 
+    const modalHeader = document.createElement("div");
+    const logo = document.createElement("img");
+    logo.src = orderConfirmed;
+    logo.classList.add("order-confirmed-logo");
+    const header = document.createElement("h1");
+    header.textContent = "Order Confirmed";
+    const text = document.createElement("p");
+    text.textContent = "we hope you enjoy your food!";
+
+    modalHeader.appendChild(logo);
+    modalHeader.appendChild(header);
+    modalHeader.appendChild(text);
+
+    const itemList = document.createElement("div");
+    const orderTotal = document.createElement("div");
+    const startNewOrderBtn = document.createElement("button");
+    let totalCost = 0.00;
+
+    
+    for (let item of cartList) {
+        const itemCost = item.price * item.count;    
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cartItem");
+
+        itemDiv.innerHTML = `<h3>${item.name}</h3>
+        <div class="price-details">
+        <div class="item-details">
+        <p class="item-count">${item.count}x</p> <p class="item-price">$${item.price}</p>
+        </div>
+        <p class="item-cost">$${itemCost}</p>
+        </div>`;
+
+        totalCost = totalCost + itemCost;
+
+        itemList.appendChild(itemDiv);
+    }
+
+    itemList.classList.add("item-list");
+    orderConfirmedModal.appendChild(modalHeader);
+    orderConfirmedModal.appendChild(itemList);
+    orderTotal.innerHTML = `Order Total            <span id="total">$${totalCost}</span>`;
+    orderTotal.classList.add("order-total");
+    orderTotal.classList.add("new");
+    orderConfirmedModal.appendChild(orderTotal);
+    startNewOrderBtn.textContent = "Start New Order";
+    startNewOrderBtn.classList.add("start-new-order-btn");
+    orderConfirmedModal.appendChild(startNewOrderBtn);
+
+
+    ModalContainer.appendChild(orderConfirmedModal);
+    menuPage.appendChild(ModalContainer);
+}
 
 displayCartItems();
 
+confirmOrderBtn.addEventListener("click", displayOrderConfirmedModal);
 menuList.addEventListener("click", addItemToCart);
 cart.addEventListener("click", removeFromCart);
 }

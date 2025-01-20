@@ -10,6 +10,7 @@ html {
 
 body {
     background-color: rgba(250, 235, 215, 0.3);
+    
 }
 header {
     width: 100%;
@@ -32,7 +33,18 @@ nav > button {
     flex-direction: column;
     gap: 3rem;
     margin-top: 2rem;
+   
 }
+.modal-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
 .hero {
     background-image: url(./images/hero-bg-desktop.jpg);
     max-width: 140rem;
@@ -201,15 +213,22 @@ footer > .made-by, footer > .address, footer > .open-times {
     width: 1.5rem;
 }
 .confirm-order-btn {
-    background-color: hsl(14, 86%, 42%);
     width: 22rem;
     height: 4rem;
+}
+.confirm-order-btn, .order-confirm-modal > button {
+    background-color: hsl(14, 86%, 42%);
     color: white;
     border-radius: 2rem;
     border-color: transparent;
     margin-inline: auto;
 
 }
+.order-confirm-modal > button {
+    width: 40rem;
+    height: 4rem;
+}
+
 .order-total {
     display: flex;
     justify-content: space-between;
@@ -224,4 +243,33 @@ footer > .made-by, footer > .address, footer > .open-times {
 }
 .cart-header, .item-count {
     color:hsl(14, 86%, 42%)
+}
+
+.cartItem > img,  .confirm-order-btn {
+    cursor: pointer;
+}
+.order-confirm-modal {
+    position: absolute;
+    width: 46rem;
+    height: fit-content;
+    margin: auto;
+    inset: 0;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.4rem;
+}
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
+.fade-in {
+    opacity: 0.1;
 }
