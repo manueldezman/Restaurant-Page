@@ -96,8 +96,7 @@ function displayMenuItems(menu) {
 }
 
 displayMenuItems(menu);
-
-
+    
 function displayCartItems() {
     cart.textContent = "";
 
@@ -106,7 +105,7 @@ function displayCartItems() {
     let totalCost = 0.00;
 
     const cartItems = document.createElement("div");
-    
+
 
     for (let item of cartList) {
         const itemCost = item.price * item.count;
@@ -177,8 +176,21 @@ function removeFromCart(e) {
         displayCartItems();
 
 }
+function resetCount() {
+    for (let item of menu) {
+        item.count = 0;
+    }
+}
+function startNewOrder() {
+    cartList.length = 0;
+    displayCartItems();
+    ModalContainer.classList.add("inactive");
+    resetCount();
+}
+
 function displayOrderConfirmedModal() {
     orderConfirmedModal.textContent = "";
+    ModalContainer.classList.remove("inactive");
 
     const modalHeader = document.createElement("div");
     const logo = document.createElement("img");
@@ -215,6 +227,8 @@ function displayOrderConfirmedModal() {
         totalCost = totalCost + itemCost;
 
         itemList.appendChild(itemDiv);
+
+        startNewOrderBtn.addEventListener("click", startNewOrder);
     }
 
     itemList.classList.add("item-list");
