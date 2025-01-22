@@ -259,7 +259,7 @@ footer > .made-by, footer > .address, footer > .open-times {
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap:3rem;
     font-size: 1.4rem;
 }
 

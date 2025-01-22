@@ -117,7 +117,7 @@ function displayCartItems() {
         itemDiv.innerHTML = `<h3>${item.name}</h3>
         <div class="price-details">
         <div class="item-details">
-        <p class="item-count">${item.count}x</p> <p class="item-price">$${item.price}</p> <p class="item-cost">$${itemCost}</p>
+        <p class="item-count">${item.count}x</p> <p class="item-price">@$${item.price}</p> <p class="item-cost">$${itemCost}</p>
         </div>
         <img id="${item.name}" src="${removeItem}" alt="remove item"/>
         </div>`;
@@ -207,7 +207,7 @@ function displayOrderConfirmedModal() {
         itemDiv.innerHTML = `<h3>${item.name}</h3>
         <div class="price-details">
         <div class="item-details">
-        <p class="item-count">${item.count}x</p> <p class="item-price">$${item.price}</p>
+        <p class="item-count">${item.count}x</p> <p class="item-price">@$${item.price}</p>
         </div>
         <p class="item-cost">$${itemCost}</p>
         </div>`;
