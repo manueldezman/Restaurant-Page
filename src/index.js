@@ -7,7 +7,6 @@ const menuBtn = document.querySelector(".menu");
 const contentDiv = document.querySelector(".content");
 const homeBtn = document.querySelector(".home");
 const reservationsBtn = document.querySelector(".reservations");
-const contactBtn = document.querySelector(".contact-us");
 
 LoadHomePage();
 
@@ -19,10 +18,6 @@ function LoadMenu(){
     contentDiv.textContent = "";
     MenuPage(contentDiv);
     };
-function LoadContact() {
-    contentDiv.textContent = "";
-
-}
 
 function LoadReservations() {
     contentDiv.textContent = "";

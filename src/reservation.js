@@ -1,8 +1,10 @@
 function reservationPage(div) {
     const reservations = document.createElement("div");
+    reservations.classList.add("seat-reserve-confirmation");
     const seatReserved = document.createElement("div");
 
-    const form = document.createElement("div");    
+    const form = document.createElement("div");
+    form.classList.add("reservation-form");    
     const nameSpace = document.createElement("input");
     nameSpace.setAttribute("type", "text");
     nameSpace.setAttribute("placeholder", "Name");
@@ -62,6 +64,7 @@ function reservationPage(div) {
 
     const cancelBtn = document.createElement("button");
     cancelBtn.textContent = "Go Back";
+    cancelBtn.classList.add("cancel-btn");
     seatReserved.textContent = "Your seat is successfully reserved";
     reservations.appendChild(seatReserved);
     reservations.appendChild(cancelBtn);
@@ -72,12 +75,12 @@ function reservationPage(div) {
     function seatReserve() {
         form.classList.add("inactive");
         reservations.classList.remove("inactive");
-        reservations.classList.add("active");
+        reservations.classList.add("active-tab");
     }
 
     function exitReservedSeatPage() {
         form.classList.remove("inactive");
-        reservations.classList.remove("active");
+        reservations.classList.remove("active-tab");
         reservations.classList.add("inactive");
     }
 

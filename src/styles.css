@@ -33,7 +33,7 @@ nav > button {
     flex-direction: column;
     gap: 3rem;
     margin-top: 2rem;
-   
+    min-height: 82vh;
 }
 .modal-container {
     height: 100%;
@@ -83,7 +83,6 @@ nav > button {
     width: 45rem;
     height: 50rem;
     background-image: url(./images/social-events-desktop.jpg);
-    /* background-position: 20% 0%; */
 }
 
 .menu-container > div:last-of-type {
@@ -95,8 +94,8 @@ nav > button {
     object-fit: contain;
 }
 
-
 footer {
+    
     max-width: 140rem;
     height: 10rem;
     display: flex;
@@ -104,6 +103,7 @@ footer {
     margin: auto;
     font-size: 1.6rem;
     margin-top: 5rem;
+
 }
 
 footer > .address, footer > .open-times {
@@ -270,6 +270,44 @@ footer > .made-by, footer > .address, footer > .open-times {
 .inactive {
     display: none;
 }
+
+.active-tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel-btn {
+    width: 10rem;
+}
+
 .fade-in {
     opacity: 0.1;
+}
+
+.reservation-form, .seat-reserve-confirmation {
+    flex-direction: column;
+    width: 40rem;
+    gap: 2rem;
+    font-size: 1.6rem;
+    height: 100rem;
+    margin: auto;
+}
+
+.reservation-form > input, .reservation-form > div > input, .reservation-form > button
+ {
+    margin-bottom: 1rem;
+    width: 40rem;
+    height: 3rem;
+}
+
+.reservation-form > div {
+    display: flex;
+    flex-direction: column;
+}
+ .seat-reserve-confirmation > *{
+    margin-inline: auto;
+}
+
+.seat-reserve-confirmation {
+    margin-top: 10rem
 }
