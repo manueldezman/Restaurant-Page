@@ -11,6 +11,7 @@ function PageLoad (div) {
     const heroBtn = document.createElement("button");
     heroBtn.textContent = "Book a Table";
     heroBtn.classList.add('callToAction');
+    heroBtn.classList.add('heroBtn');
 
     hero.appendChild(header);
     hero.appendChild(headerText);
@@ -25,6 +26,7 @@ function PageLoad (div) {
 
     const socialEventImage = document.createElement("div");
     const socialEventText = document.createElement("div");
+    socialEventText.classList.add("text-Div");
 
     const eventTextHeader = document.createElement("h2");
     eventTextHeader.classList.add("text-header");
@@ -34,6 +36,7 @@ function PageLoad (div) {
     const eventBtn = document.createElement("button");
     eventBtn.textContent = "Book a Table";
     eventBtn.classList.add('callToAction');
+    eventBtn.classList.add('eventBtn');    
     
     socialEventText.appendChild(eventTextHeader);
     socialEventText.appendChild(eventText);
@@ -67,6 +70,7 @@ function PageLoad (div) {
     menuImage.appendChild(imageFour);
 
     const menuTextDiv = document.createElement("div");
+    menuTextDiv.classList.add("text-Div");
 
     const menuTextHeader = document.createElement("h2");
     menuTextHeader.classList.add("text-header");
@@ -79,6 +83,8 @@ function PageLoad (div) {
     const menuBtn = document.createElement("button");
     menuBtn.textContent = "Checkout menu";
     menuBtn.classList.add('callToAction');
+    menuBtn.classList.add('menuBtn');
+
     
     menuTextDiv.appendChild(menuTextHeader);
     menuTextDiv.appendChild(menuText);

@@ -1,7 +1,16 @@
+/* color HEX */
+:root {
+    --barn-red: #780000ff;
+    --fire-brick: #c1121fff;
+    --seashell: #eee2dfff;
+    --barn-red-light: rgba(120, 0, 0, 0.3);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
 }
 
 html {
@@ -9,11 +18,20 @@ html {
 }
 
 body {
-    background-color: rgba(250, 235, 215, 0.3);
-    
+    background-color: var(--seashell);
+    border-bottom: 1rem solid black;
+
 }
 header {
     width: 100%;
+    background-color: var(--barn-red);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: sticky;
+    top: 0;
+    border-bottom: 1rem solid black;
+    z-index: 3;
+
 }
 
 header > nav {
@@ -23,11 +41,14 @@ header > nav {
     justify-content: space-between;
 }
 nav > button {
-    font-size: 2rem;
+    font-size: 2.5rem;
     border: unset;
     background-color: transparent;
     cursor: pointer;
+    color: white;
+
 }
+
 .content {
     display: flex;
     flex-direction: column;
@@ -52,27 +73,65 @@ nav > button {
     width: 80%;
     object-fit: contain;
     background-position: 60% 0%;
-    color: white;
+    color: var(--seashell);
     padding:  25rem 5rem;
     margin: auto;
 }
 
 .hero > h1 {
-    font-size: 5rem;
+    font-size: 6rem;
+    font-weight: 800;
 }
 
 .hero > p {
     font-size: 1.6rem;
     width: 65ch;
+    line-height: 3rem;
+    font-weight: 600;
+    color: white;
 }
-
+.hero > button {
+    padding: 1.6rem 3.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 1.5rem;
+    background-color: black;
+    color: white;
+    border: .3rem solid white;
+    font-size: 1.6rem;
+}
+.hero > button:hover {
+    background-color: white;
+    color: black;
+    border: .3rem solid white;
+}
+.socialEvent button:hover , .menu-container  button:hover {
+    background-color: var(--fire-brick);
+    color: white;
+    border: .3rem solid white;
+} 
+.socialEvent button, .menu-container  button {
+    padding: 1.6rem 3.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 1.5rem;
+    background-color: var(--seashell);
+    color: var(--fire-brick);
+    border: .3rem solid var(--fire-brick);
+    font-size: 1.6rem;
+    width: max-content;
+}
 .container {
     display: flex;
     justify-content: space-between;
 }
 .container div > p {
-    font-size: 3rem;
+    font-size: 2rem;
     width: 28ch;
+}
+
+.container h2 {
+    font-size: 4rem;
 }
 .socialEvent, .menu-container {
     max-width: 90rem;
@@ -88,24 +147,30 @@ nav > button {
 .menu-container > div:last-of-type {
     width: 45rem;
     height: 50rem;
-    border: 1px solid red;
+    border: 1px solid var(--fire-brick);
     background-image: url(./images/menu);
     background-position: 60% 50%;
     object-fit: contain;
 }
 
 footer {
-    
-    max-width: 140rem;
     height: 10rem;
     display: flex;
     justify-content: space-around;
     margin: auto;
     font-size: 1.6rem;
     margin-top: 5rem;
+    background-color: var(--barn-red);
+    color: white;
+    margin-bottom: 0;
 
 }
 
+.text-Div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 footer > .address, footer > .open-times {
     text-transform: uppercase;
 }
@@ -122,7 +187,7 @@ footer > .made-by, footer > .address, footer > .open-times {
     border-radius: 1rem;
 }
 .item-image:hover {
-    border: .2rem solid red;
+    border: .2rem solid var(--fire-brick);
 }
 .menuList {
     display: flex;
@@ -186,16 +251,20 @@ footer > .made-by, footer > .address, footer > .open-times {
     font-size: 1.4rem;
     background-color: white;
     height: fit-content;
+    border-radius: 3rem;
 }
 .cart-item-container {
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
+.cart-header {
+    margin-top: 2rem;
+}
 .cartItem {
     display: flex;
     flex-direction: column;
-    border-bottom: .1px solid rgba(128, 128, 128, 0.2);
+    border-bottom: .1px solid var(--barn-red-light);
     gap: .5rem;
 }
 .item-details {
@@ -215,9 +284,10 @@ footer > .made-by, footer > .address, footer > .open-times {
 .confirm-order-btn {
     width: 22rem;
     height: 4rem;
+    margin-bottom: 2rem;
 }
 .confirm-order-btn, .order-confirm-modal > button {
-    background-color: hsl(14, 86%, 42%);
+    background-color: var(--fire-brick);
     color: white;
     border-radius: 2rem;
     border-color: transparent;
@@ -242,7 +312,7 @@ footer > .made-by, footer > .address, footer > .open-times {
     margin-bottom: 1rem;
 }
 .cart-header, .item-count {
-    color:hsl(14, 86%, 42%)
+    color:var(--fire-brick);
 }
 
 .cartItem > img,  .confirm-order-btn {
@@ -308,6 +378,15 @@ footer > .made-by, footer > .address, footer > .open-times {
     margin-inline: auto;
 }
 
-.seat-reserve-confirmation {
+.seat-reserve-confirmation, .reservation-form{
     margin-top: 10rem
+}
+.cancel-btn, .reservation-form > button {
+    background-color: var(--fire-brick);
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
