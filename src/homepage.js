@@ -1,4 +1,4 @@
-function PageLoad (div) {
+function PageLoad (div, LoadReservations, LoadMenu) {
 
     const hero = document.createElement("div");
     hero.classList.add("hero");
@@ -55,19 +55,7 @@ function PageLoad (div) {
 
     const menuImage = document.createElement("div");
 
-    const imageOne = document.createElement('div');
-    imageOne.classList.add("image-one");
-    const imageTwo = document.createElement('div');
-    imageTwo.classList.add("image-two");
-    const imageThree = document.createElement('div');
-    imageThree.classList.add("image-three");
-    const imageFour = document.createElement('div');
-    imageFour.classList.add("image-four");
-
-    menuImage.appendChild(imageOne);
-    menuImage.appendChild(imageTwo);
-    menuImage.appendChild(imageThree);
-    menuImage.appendChild(imageFour);
+    
 
     const menuTextDiv = document.createElement("div");
     menuTextDiv.classList.add("text-Div");
@@ -94,6 +82,11 @@ function PageLoad (div) {
     menu.appendChild(menuImage);
 
     div.appendChild(menu);
+
+
+    menuBtn.addEventListener("click", LoadMenu);
+    heroBtn.addEventListener("click", LoadReservations);
+    eventBtn.addEventListener("click", LoadReservations);
 
 }
 

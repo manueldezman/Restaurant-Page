@@ -3,10 +3,7 @@ import { PageLoad } from "./homepage";
 import { MenuPage } from "./menu";
 import { reservationPage } from "./reservation";
 
-const menuBttn = document.querySelector(".menu");
-const menuBtn = document.querySelector(".menuBtn");
-const heroBtn = document.querySelector(".heroBtn");
-const eventBtn = document.querySelector(".eventBtn");
+const menuBtn = document.querySelector(".menu");
 const contentDiv = document.querySelector(".content");
 const homeBtn = document.querySelector(".home");
 const reservationsBtn = document.querySelector(".reservations");
@@ -15,7 +12,7 @@ LoadHomePage();
 
 function LoadHomePage() {
     contentDiv.textContent = "";
-    PageLoad(contentDiv);
+    PageLoad(contentDiv, LoadReservations, LoadMenu);
 }
 function LoadMenu(){
     contentDiv.textContent = "";
@@ -28,8 +25,5 @@ function LoadReservations() {
 
 }
 homeBtn.addEventListener("click", LoadHomePage);
-menuBttn.addEventListener("click", LoadMenu);
 reservationsBtn.addEventListener("click", LoadReservations);
 menuBtn.addEventListener("click", LoadMenu);
-eventBtn.addEventListener("click", LoadReservations);
-heroBtn.addEventListener("click", LoadReservations);
