@@ -58,12 +58,13 @@ nav > button {
 }
 .modal-container {
     height: 100%;
-    width: 80%;
+    width: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
     top: 0;
     left: 0;
     bottom: 0;
+    right: 0;
 }
 
 .hero {
@@ -443,6 +444,16 @@ footer > .made-by, footer > .address, footer > .open-times {
         height: 30rem;
         background-size: cover;
         background-image: url(./images/social-events-tablet.jpg);
+    }
+
+    .order-confirm-modal {
+        width: 30rem;
+        gap: 1rem;
+        padding: 2rem;
+        font-size: 1.2rem;
+    }
+    .order-confirm-modal > button {
+        width: 15rem;
     }
 
     .menu-container  div:last-of-type {
