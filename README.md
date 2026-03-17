@@ -91,7 +91,7 @@ For the production build, after running `npm run build`, you will find a `dist/`
 
 This project does not currently include automated testing frameworks. To test the application:
 
-1.  Start the development server: `npm start`
+1.  Start the development server: `npm run dev`
 2.  Open your browser to `http://localhost:8080`.
 3.  Manually navigate through all sections and interact with the page to ensure all features function as expected across different screen sizes.
 
