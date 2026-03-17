@@ -45,7 +45,7 @@ Follow these steps to get the project up and running on your local machine.
     This will compile the project and open it in your default browser, typically at `http://localhost:8080`.
 
     ```bash
-    npm start
+    npm run dev
     ```
 
 4.  **Build for production:**
